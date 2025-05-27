@@ -5,10 +5,10 @@ pipeline {
         stage('Initialize') {
             steps {
                 script {
-                    def currentBranch = env.BRANCH_NAME ?: 'master'
+                    def currentBranch = env.BRANCH_NAME ?: 'main'
                     env.CONFIG_NAME = currentBranch == 'production' 
                                       ? 'Vizo-prod' 
-                                      : (currentBranch == 'master' 
+                                      : (currentBranch == 'main' 
                                           ? 'Aksum' 
                                           : 'UNKNOWN')
                 }
